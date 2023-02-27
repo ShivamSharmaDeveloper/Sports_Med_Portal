@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Registration Form in HTML CSS</title>
+  <!---Custom CSS File--->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" href="{% static 'medical.css'%}" />
+  <link rel="shortcut icon" href="{% static './img/favicon.png' %}" type="image/x-icon">
+  <script type="module" src="{% static 'medical.ts' %}"></script>
+</head>
+
+<body>
+  <section class="container">
+    <header>Registration Form</header>
+    <form action="medical" method="POST" class="form" autocomplete="off">
+      {% csrf_token %}
+      <div class="input-box">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter full name" required />
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label>Roll Number</label>
+          <input type="tel" name="rollno" placeholder="Enter roll number" required />
+        </div>
+        <div class="input-box">
+          <label>Course</label>
+          <input type="text" name="course" placeholder="Course" required />
+        </div>
+      </div>
+
+
+
+      <div class="column">
+        <div class="input-box">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="Enter phone number" required />
+        </div>
+        <div class="input-box">
+          <label>Age</label>
+          <input type="tel" name="age" placeholder="Enter Age" required />
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label>Email</label>
+          <input type="text" name="email" placeholder="Enter email address" required />
+        </div>
+        <div class="input-box">
+          <label>Martial Status</label>
+          <div class="select-box">
+            <select name="maritalstatus">
+              <option hidden></option>
+              <option value="Married">Married</option>
+              <option value="Unmarried">Unmarried</option>
+              <option value="Divorced">Divorced</option>
+              <option value="Widow">Widow</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label>Weight</label>
+          <input type="tel" name="weight" placeholder="Enter Weight in kg" required />
+        </div>
+        <div class="input-box">
+          <label>Height</label>
+          <input type="tel" name="height" placeholder="Enter Height in cm" required />
+        </div>
+      </div>
+
+
+
+      <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input type="radio" value="Male" id="check-male" name="gender" />
+            <label for="check-male">Male</label>
+          </div>
+          <div class="gender">
+            <input type="radio" value="Female" id="check-female" name="gender" />
+            <label for="check-female">Female</label>
+          </div>
+          <div class="gender">
+            <input type="radio" value="prefer not to say" id="check-other" name="gender" />
+            <label for="check-other">prefer not to say</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box address">
+        <label>Patient Problem</label>
+        <input type="text" name="problem" placeholder="Enter Problem" required />
+        <label>Address</label>
+        <input type="text" name="address" placeholder="Enter street address" required />
+        <div class="column">
+          <div class="select-box">
+            <select name="country">
+              <option hidden>Country</option>
+              <option value="America">America</option>
+              <option value="Japan">Japan</option>
+              <option value="India">India</option>
+              <option value="Nepal">Nepal</option>
+            </select>
+          </div>
+          <input type="text" name="city" placeholder="Enter your city" required />
+        </div>
+        <div class="column">
+          <input type="text" name="state" placeholder="Enter your State" required />
+          <input type="number" name="pincode" placeholder="Enter pin code" required />
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+  </section>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initAutocomplete&libraries=places&v=weekly"
+    defer></script>
+</body>
+
+</html>
