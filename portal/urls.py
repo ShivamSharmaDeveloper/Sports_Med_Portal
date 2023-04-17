@@ -12,6 +12,7 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
     path('update/<int:id>', views.update, name='update'),
     path('update/update/<int:id>', views.update, name='updated'),
+    path('update/logout', views.logout, name='logout'),
     path('logout', views.logout, name='logout'),
     path('aboutus', views.aboutus, name='aboutus'),
     path('contactus', views.contactus, name='contactus'),
